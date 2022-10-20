@@ -1,9 +1,10 @@
-import NewMeetUpForm from '../../components/meetups/NewMeetupForm'
+import NewMeetUpForm from "../../components/meetups/NewMeetupForm";
 
 const NewMeetUp = () => {
-  return (
-    <NewMeetUpForm/>
-  )
-}
+  const MeetUpHandler = (meetUpData) => {
+    console.log(meetUpData);
+  };
+  return <NewMeetUpForm onAddMeetup={MeetUpHandler} />;
+};
 
-export default NewMeetUp
+export default NewMeetUp;
