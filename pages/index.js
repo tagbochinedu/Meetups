@@ -35,4 +35,20 @@ const Home = () => {
   return <MeetupList meetups={loadedData} />;
 };
 
+//USED TO PRE-RENDER ON THE SERVER INSTEAD. ADVANTAGEOUS WHEN REQUESTS ARE EXPECTED FREQUENTLY
+// export async function getServerSideProps(context) {
+//   req = context.req;
+//   res = context.res;
+//   //FETCH API DATA HERE
+
+//   return { props: { meetups: DUMMY_DATA } };
+// }
+
+//USED TO PRE-RENDER ONCE DURING PRODUCTION BUILD. ADVANTAGEOUS WHEN REQUESTS ARE NOT EXPECTED FREQUENTLY. THE REVALIDATE KEY SETS A TIME IN SECONDS TAKEN FOR THE PAGE TO RE-RENDER AFTER A NEW REQUEST IS SENT. IF ABSENT THEN NO NEW REQUESTS ARE MADE AND THE PAGE REMAINS STATIC. THUS THE NAME
+export async function getStaticProps() {
+  //FETCH API DATA HERE
+
+  return { props: { meetups: DUMMY_DATA }, revalidate: 10 };
+}
+
 export default Home;
