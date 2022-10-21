@@ -28,7 +28,7 @@ function NewMeetupForm(props) {
   }
 
   return (
-    <Card className="max-w-2xl mx-auto mt-20">
+    <Card className="max-w-xl mx-auto mt-16">
       <form className="p-4" onSubmit={submitHandler}>
         <div className="mb-2">
           <label htmlFor="title" className="block font-bold mb-2">
